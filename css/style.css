@@ -208,7 +208,8 @@ button {
   justify-content: center;
   flex-shrink: 0;
   margin-right: 0.7rem;
-  background-color: #0e42ba;
+  background-color: #fff;
+  color: #000;
    -webkit-tap-highlight-color: transparent;
 }
 
