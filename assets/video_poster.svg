@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="mesh-gradient" width="1600" height="900" viewBox="0 0 1600 900" >
+<svg xmlns="http://www.w3.org/2000/svg" id="mesh-gradient" width="889" height="500" viewBox="0 0 889 500" >
   <defs>
-    <filter id="blur" filterUnits="userSpaceOnUse" x="0" y="0" width="1600" height="900">
+    <filter id="blur" filterUnits="userSpaceOnUse" x="0" y="0" width="889" height="500">
       <feGaussianBlur stdDeviation="100" />
     </filter>
     <filter id="noise" x="0" y="0" width="100%" height="100%">
@@ -9,10 +9,10 @@
     </filter>
   </defs>
   <rect id="background" width="100%" height="100%" fill="#132541" />
-  <g id="swatches" width="1600" height="900" filter="url(#blur)">
-    <rect x="579.222766678618" y="71.64643386530508" width="737.0890026246387" height="750.0257220525369" fill="#132541" />
-    <rect x="-323.18890970479913" y="176.0074323017795" width="656.547018367191" height="536.9942063526017" fill="#E87A64" />
-    <rect x="108.2477308335221" y="-121.11815097018693" width="434.4430875820336" height="352.58167273990097" fill="#E87A64" />
+  <g id="swatches" width="889" height="500" filter="url(#blur)">
+    <rect x="342.2809496808837" y="71.64643386530508" width="737.0890026246387" height="750.0257220525369" fill="#132541" />
+    <rect x="-205.08787441682713" y="273.64274254770714" width="417.8026480518488" height="341.7235858607465" fill="#E87A64" />
+    <rect x="-27.42497377036682" y="-165.19086006267452" width="543.053859477542" height="440.72709092487617" fill="#E87A64" />
   </g>
-  <rect x="0" y="0" width="1600" height="900" style="mix-blend-mode: soft-light; filter: url(#noise); opacity: 90%"></rect>
+  <rect x="0" y="0" width="889" height="500" style="mix-blend-mode: overlay; filter: url(#noise); opacity: 54%"></rect>
 </svg>
