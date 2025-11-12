@@ -1,7 +1,7 @@
 ![Stream Tester](https://raw.githubusercontent.com/projectdevphil/stream-tester/refs/heads/gh-pages/assets/stream_tester_poster.png)
 
 [![Shaka Player](https://img.shields.io/badge/Powered%20by-Shaka%20Player-blue)](https://github.com/shaka-project/shaka-player)
-[![Version](https://img.shields.io/badge/Shaka%20Player-v4.16.2-blue)](https://github.com/shaka-project/shaka-player/releases/tag/v4.16.2)
+[![Version](https://img.shields.io/badge/Shaka%20Player-v4.16.2-blue)](https://github.com/shaka-project/shaka-player/releases/tag/v4.16.9)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 A user-friendly web application for testing and streaming video content, powered by the robust Shaka Player. This tool simplifies the process of playing M3U playlists and manually testing HLS and DRM-protected MPEG-DASH streams.
@@ -81,5 +81,7 @@ This project is built with modern web technologies and relies on the excellent S
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## 🧑🏻‍💻 Developer
+
+This playlist is maintained by:
 
 ![Project Dev](https://raw.githubusercontent.com/projectdevphil/tester/refs/heads/gh-pages/assets/project_dev_(horizontal_poster).png)
