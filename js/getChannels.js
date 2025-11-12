@@ -10,10 +10,13 @@
         "k1": "nrQFDeRLSAKTLifXUIPiZg",
         "k2": "FmY0xnWCPCNaSpRG-tUuTQ"
     },
-    "Sample_3_(MP4_compatible_with_HLS)": {
-        "url": "https://projectbeeph.github.io/tester/assets/samples/sample_1.mp4"
+    "Sample_4_(MP4_compatible_with_HLS)": {
+        "url": "https://projectdevphil.github.io/stream-tester/assets/samples/sample_1.mp4"
+    },
+    "Sample_5_(MP4_compatible_with_HLS)": {
+        "url": "https://projectdevphil.github.io/stream-tester/assets/samples/sample_3.mp4"
     },
     "Charli XCX - Blame It On Your Love feat. Lizzo [Official Video]": {
-        "url": "https://projectbeeph.github.io/tester/assets/samples/sample_2.mp4"
+        "url": "https://projectdevphil.github.io/stream-tester/assets/samples/sample_2.mp4"
     }
 }
