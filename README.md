@@ -82,4 +82,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## 🧑🏻‍💻 Developer
 
-![Project Dev](https://raw.githubusercontent.com/projectdevphil/tester/refs/heads/gh-pages/assets/project_dev_(horizontal_poster).png)
+![Project Dev](gh-pages/assets/project_dev_(horizontal_poster).png)
