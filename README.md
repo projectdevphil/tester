@@ -1,4 +1,4 @@
-# Stream Tester
+![Stream Tester](https://raw.githubusercontent.com/projectdevphil/stream-tester/refs/heads/gh-pages/assets/stream_tester_poster.png)
 
 [![Shaka Player](https://img.shields.io/badge/Powered%20by-Shaka%20Player-blue)](https://github.com/shaka-project/shaka-player)
 [![Version](https://img.shields.io/badge/Shaka%20Player-v4.16.2-blue)](https://github.com/shaka-project/shaka-player/releases/tag/v4.16.2)
