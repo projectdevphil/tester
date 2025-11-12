@@ -82,4 +82,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## 🧑🏻‍💻 Developer
 
-![Project Dev (Horizontal Poster)](assets/project_dev_(horizontal_poster).png)
+![Project Dev](assets/project_dev_(horizontal_poster).png)
