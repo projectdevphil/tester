@@ -70,6 +70,7 @@ input {
 .header a img {
   height: auto; 
   max-width: 155px;
+  pointer-events: none;
   user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
