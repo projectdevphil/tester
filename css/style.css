@@ -232,6 +232,10 @@ button {
   height: 100%;
 }
 
+.shaka-text-container * {
+    font-family: 'Questrial', sans-serif !important;
+}
+
 .shaka-overflow-menu,
 .shaka-settings-menu {
   border-radius: 20px;
