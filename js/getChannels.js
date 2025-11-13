@@ -21,5 +21,8 @@
     },
     "Charli XCX - Blame It On Your Love feat. Lizzo [Official Video]": {
         "url": "https://projectdevphil.github.io/stream-tester/assets/samples/sample_2.mp4"
+    },
+    "Tie Me Down (STL - Remix)": {
+        "url": "https://projectdevphil.github.io/stream-tester/assets/samples/Tie Me Down (STL)[Remix] (1).mp4"
     }
 }
