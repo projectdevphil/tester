@@ -69,7 +69,7 @@ input {
 
 .header a img {
   height: auto; 
-  width: 5.5rem;
+  width: 32px;
   user-select: none;
    -webkit-tap-highlight-color: transparent;
 }
