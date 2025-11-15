@@ -30,6 +30,9 @@
        <a href="/stream-tester">
          <img src="assets/stream_tester_logo.svg" alt="Stream Tester Logo" class="logo-img">
        </a>
+       <button id="menu-toggle-btn" class="menu-button" aria-label="Open menu">
+         <span class="material-symbols-rounded">menu</span>
+       </button>
      </header>
     <main class="grid-container">
       <div class="player-wrapper">
@@ -118,6 +121,37 @@
       </div>
     </main>
   </div>
+  
+  <div id="menu-backdrop" class="menu-backdrop"></div>
+  <aside id="side-menu" class="side-menu">
+      <div class="menu-header">
+          <h3>Menu</h3>
+          <button id="menu-close-btn" class="menu-button" aria-label="Close menu">
+              <span class="material-symbols-rounded">close</span>
+          </button>
+      </div>
+      <ul class="menu-links">
+          <li>
+              <a href="about.html">
+                  <span class="material-symbols-rounded">info</span>
+                  <span>About Us</span>
+              </a>
+          </li>
+          <li>
+              <a href="how-to-use.html">
+                  <span class="material-symbols-rounded">help_center</span>
+                  <span>How to Use</span>
+              </a>
+          </li>
+          <li>
+              <a href="feedback.html">
+                  <span class="material-symbols-rounded">feedback</span>
+                  <span>Feedback & Suggestions</span>
+              </a>
+          </li>
+      </ul>
+  </aside>
+  
   <footer class="site-footer">
     <p>&copy; 2025 Project Dev. All Rights Reserved.</p>
     <p>Powered by Shaka Player (4.16.9)</p>
