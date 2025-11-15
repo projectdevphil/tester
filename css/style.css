@@ -10,7 +10,7 @@
   --error-color: #800000;
   --glass-bg: rgba(26, 26, 26, 0.8);
   --glass-border: 1px solid rgba(255, 255, 255, 0.1);
-  --border-radius: 15px;
+  --border-radius: 30px;
 }
 
 body {
@@ -283,7 +283,7 @@ button {
     transform: translateY(-10px);
     visibility: hidden;
     transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-    width: 170px;
+    width: 165px;
 }
 
 .floating-menu.active {
