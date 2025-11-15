@@ -283,7 +283,7 @@ button {
     transform: translateY(-10px);
     visibility: hidden;
     transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-    width: 175px;
+    width: 170px;
 }
 
 .floating-menu.active {
