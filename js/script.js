@@ -2,6 +2,7 @@ let player;
 let ui;
 let playlistData = [];
 let defaultStreamsData = {}; 
+let floatingMenu;
 
 const video = document.getElementById('video');
 const videoContainer = document.getElementById('video-container');
@@ -31,7 +32,6 @@ const playlistInputs = document.getElementById('playlist-inputs');
 
 // Menu Elements
 const menuToggleBtn = document.getElementById('menu-toggle-btn');
-const floatingMenu = document.getElementById('floating-menu');
 
 function toggleDrmBlockVisibility() {
   const manifestUri = manifestUriInput.value.toLowerCase().trim();
@@ -344,6 +344,41 @@ function onError(event) {
   showError(`Error Code: ${error.code}\nCategory: ${error.category}`);
 }
 
+function createFloatingMenu() {
+    const menu = document.createElement('nav');
+    menu.id = 'floating-menu';
+    menu.className = 'floating-menu';
+
+    const menuItems = [
+        { href: '/stream-tester/about', icon: 'info', text: 'About Us' },
+        { href: '/stream-tester/how-to-use', icon: 'help_center', text: 'How to Use' },
+        { href: '/stream-tester/feedback', icon: 'feedback', text: 'Feedback' }
+    ];
+
+    const ul = document.createElement('ul');
+
+    menuItems.forEach(item => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = item.href;
+
+        const iconSpan = document.createElement('span');
+        iconSpan.className = 'material-symbols-rounded';
+        iconSpan.textContent = item.icon;
+
+        const textSpan = document.createElement('span');
+        textSpan.textContent = item.text;
+
+        a.appendChild(iconSpan);
+        a.appendChild(textSpan);
+        li.appendChild(a);
+        ul.appendChild(li);
+    });
+
+    menu.appendChild(ul);
+    document.body.appendChild(menu);
+}
+
 function toggleMenu() {
     if (floatingMenu) {
         floatingMenu.classList.toggle('active');
@@ -384,6 +419,8 @@ function setupEventListeners() {
 }
 
 function main() {
+  createFloatingMenu();
+  floatingMenu = document.getElementById('floating-menu');
   setupEventListeners();
   handleRouting(); 
   initPlayer();
