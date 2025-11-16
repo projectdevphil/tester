@@ -2,7 +2,6 @@ let player;
 let ui;
 let playlistData = [];
 let defaultStreamsData = {}; 
-let floatingMenu;
 
 const video = document.getElementById('video');
 const videoContainer = document.getElementById('video-container');
@@ -32,6 +31,42 @@ const playlistInputs = document.getElementById('playlist-inputs');
 
 // Menu Elements
 const menuToggleBtn = document.getElementById('menu-toggle-btn');
+const floatingMenu = document.getElementById('floating-menu');
+
+const renderMenu = () => {
+  const floatingMenu = document.getElementById('floating-menu');
+  if (floatingMenu) {
+    floatingMenu.innerHTML = `
+    <ul>
+        <li>
+            <a href="/stream-tester/about">
+                <span class="material-symbols-rounded">info</span>
+                <span>About Us</span>
+            </a>
+        </li>
+        <li>
+            <a href="/stream-tester/how-to-use">
+                <span class="material-symbols-rounded">help_center</span>
+                <span>How to Use</span>
+            </a>
+        </li>
+        <li>
+            <a href="/stream-tester/feedback">
+                <span class="material-symbols-rounded">feedback</span>
+                <span>Feedback</span>
+            </a>
+        </li>
+    </ul>`;
+    floatingMenu.querySelectorAll("li").forEach(e => e.addEventListener("click", t => {
+      const n = e.querySelector("a");
+      if (n) {
+        t.preventDefault();
+        window.location.href = n.href;
+      }
+    }));
+  }
+};
+
 
 function toggleDrmBlockVisibility() {
   const manifestUri = manifestUriInput.value.toLowerCase().trim();
@@ -300,7 +335,7 @@ function onChannelSelect(event) {
         k1Input.value = '';
         k2Input.value = '';
     } else {
-        licenseTypeSelect.value = 'none'; // Default to 'none'
+        licenseTypeSelect.value = 'none';
         licenseServerUrlInput.value = '';
         k1Input.value = '';
         k2Input.value = '';
@@ -344,42 +379,8 @@ function onError(event) {
   showError(`Error Code: ${error.code}\nCategory: ${error.category}`);
 }
 
-function createFloatingMenu() {
-    const menu = document.createElement('nav');
-    menu.id = 'floating-menu';
-    menu.className = 'floating-menu';
-
-    const menuItems = [
-        { href: '/stream-tester/about', icon: 'info', text: 'About Us' },
-        { href: '/stream-tester/how-to-use', icon: 'help_center', text: 'How to Use' },
-        { href: '/stream-tester/feedback', icon: 'feedback', text: 'Feedback' }
-    ];
-
-    const ul = document.createElement('ul');
-
-    menuItems.forEach(item => {
-        const li = document.createElement('li');
-        const a = document.createElement('a');
-        a.href = item.href;
-
-        const iconSpan = document.createElement('span');
-        iconSpan.className = 'material-symbols-rounded';
-        iconSpan.textContent = item.icon;
-
-        const textSpan = document.createElement('span');
-        textSpan.textContent = item.text;
-
-        a.appendChild(iconSpan);
-        a.appendChild(textSpan);
-        li.appendChild(a);
-        ul.appendChild(li);
-    });
-
-    menu.appendChild(ul);
-    document.body.appendChild(menu);
-}
-
 function toggleMenu() {
+    const floatingMenu = document.getElementById('floating-menu');
     if (floatingMenu) {
         floatingMenu.classList.toggle('active');
     }
@@ -402,14 +403,15 @@ function setupEventListeners() {
     sourceSelector.addEventListener('change', handleSourceChange);
   }
 
-  // Menu event listeners
+  const menuToggleBtn = document.getElementById('menu-toggle-btn');
+  const floatingMenu = document.getElementById('floating-menu');
+
   if (menuToggleBtn && floatingMenu) {
       menuToggleBtn.addEventListener('click', (event) => {
-          event.stopPropagation(); // Prevent this click from being caught by the window listener
+          event.stopPropagation();
           toggleMenu();
       });
 
-      // Close the menu if clicked outside
       window.addEventListener('click', (event) => {
           if (floatingMenu.classList.contains('active') && !floatingMenu.contains(event.target)) {
               toggleMenu();
@@ -419,14 +421,13 @@ function setupEventListeners() {
 }
 
 function main() {
-  createFloatingMenu();
-  floatingMenu = document.getElementById('floating-menu');
   setupEventListeners();
   handleRouting(); 
   initPlayer();
   fetchDefaultStreams(); 
   toggleDrmBlockVisibility(); 
   updateDrmFieldVisibility();
+  renderMenu();
 }
 
 document.addEventListener('DOMContentLoaded', main);
