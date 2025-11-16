@@ -29,7 +29,6 @@ const manualModeContainer = document.getElementById('manual-mode-container');
 const sourceSelector = document.getElementById('sourceSelector');
 const playlistInputs = document.getElementById('playlist-inputs');
 
-// Menu Elements
 const menuToggleBtn = document.getElementById('menu-toggle-btn');
 const floatingMenu = document.getElementById('floating-menu');
 
@@ -57,13 +56,22 @@ const renderMenu = () => {
             </a>
         </li>
     </ul>`;
-    floatingMenu.querySelectorAll("li").forEach(e => e.addEventListener("click", t => {
-      const n = e.querySelector("a");
-      if (n) {
-        t.preventDefault();
-        window.location.href = n.href;
-      }
-    }));
+
+    floatingMenu.querySelectorAll("li").forEach(item => {
+      item.addEventListener("click", event => {
+        const link = item.querySelector("a");
+        if (link) {
+          event.preventDefault();
+          window.location.href = link.href;
+        }
+      });
+
+      item.addEventListener("contextmenu", event => {
+        event.preventDefault();
+      });
+
+      item.style.webkitTouchCallout = 'none';
+    });
   }
 };
 
