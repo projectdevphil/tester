@@ -19,6 +19,9 @@
     "Sample_6_(MP4_compatible_with_HLS)": {
         "url": "https://projectdevphil.github.io/stream-tester/assets/samples/sample_4.mp4"
     },
+    "Boots S1 - Trailer (Netflix TV Series)": {
+        "url": "https://imdb-video.media-imdb.com/vi1258604569/1434659529640-260ouz-1758565194256.mp4?Expires=1763772581&Signature=SZgv3oMJSkHQAOPoGagYUsJrbpSgAIY11gIlmIwdhOcnDwsEZYgQKpVCLDfyayrpog6kVa36DyeP54K9YiIxVodpR9uHtgG1tojGeokfHHUNR8lohOMn~vxmT-m1NRY0F34O-ovd1J0HMgs1saMN-dr54lLE0verC4qVJwW0o2Jdqo4iUrPgfcXP-tCKkLEHetuDITfFHCTPOC~wueVpUSSIZrO0ewnX-N3mi6Y88GBQkGKiErZERoDStUFPkLVCwhCNoUqH3xI8MXLCmwT1mk471T9OSqvGNbEo3FytRF686OXjlZdO-e2fN1alMiFJqeLcFzXRnnFIIfKai2OD2Q__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA"
+    },
     "Charli XCX - Blame It On Your Love feat. Lizzo [Official Video]": {
         "url": "https://projectdevphil.github.io/stream-tester/assets/samples/sample_2.mp4"
     },
