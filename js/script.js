@@ -55,6 +55,10 @@ const renderMenu = () => {
                 <span>Feedback</span>
             </a>
         </li>
+            <a href="/litestream">
+                <span style="font-family: 'Netflix Sans', sans-serif; font-weight: bold;">litestream</span>
+            </a>
+        </li>
     </ul>`;
 
     floatingMenu.querySelectorAll("li").forEach(item => {
