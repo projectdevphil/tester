@@ -56,7 +56,8 @@ const renderMenu = () => {
             </a>
         </li>
             <a href="/litestream">
-                <span style="font-family: 'Netflix Sans', sans-serif; font-weight: bold;">litestream</span>
+                <span class="material-symbols-rounded">sensors</span>
+                <span>Litestream</span>
             </a>
         </li>
     </ul>`;
