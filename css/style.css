@@ -88,12 +88,16 @@ input {
   width: 40px;
   height: 40px;
   padding: 8px;
-  background: var(--card-background);
+  background: transparent;
   border: none;
   border-radius: 50%;
   color: var(--primary-text-color);
   cursor: pointer;
   z-index: 1002;
+}
+
+.menu-button:hover {
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .grid-container {
