@@ -129,6 +129,7 @@
 .social-icon-links a img {
   width: 28px;
   height: 28px;
+  filter: grayscale(100%);
 }
 
 .developer-section {
