@@ -269,6 +269,7 @@ button {
 .shaka-overflow-menu {
     font-family: 'BR Sonoma', sans-serif !important;
     font-weight: 700;
+    overflow: hidden;
 }
 
 .shaka-controls-container button,
