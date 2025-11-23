@@ -1,3 +1,5 @@
+@import url('https://fonts.cdnfonts.com/css/br-sonoma');
+
 :root {
   --background-color: #000000;
   --card-background: #1a1a1a;
@@ -17,7 +19,7 @@ body {
   margin: 0;
   background-color: var(--background-color);
   color: var(--primary-text-color);
-  font-family: 'Questrial', sans-serif;
+  font-family: 'BR Sonoma', sans-serif;
   font-size: 1rem;
   line-height: 1.45;
   user-select: none;
@@ -41,7 +43,7 @@ p {
 
 button,
 select {
-  font-family: 'Questrial', sans-serif;
+  font-family: 'BR Sonoma', sans-serif;
   font-size: 0.8rem;
 }
 
