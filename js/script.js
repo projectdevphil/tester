@@ -56,7 +56,7 @@ const renderMenu = () => {
             </a>
         </li>
         <li>
-            <a href="/litestream">
+            <a href="https://litestream-iptv.vercel.app/home">
                 <span class="material-symbols-rounded">sensors</span>
                 <span>Litestream</span>
             </a>
