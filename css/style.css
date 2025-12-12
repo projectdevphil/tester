@@ -76,9 +76,7 @@ header.scrolled {
 .logo-text {
     font-size: 1.2rem;
     font-weight: 800;
-    letter-spacing: -0.5px;
     color: var(--text-color);
-    text-transform: uppercase;
     display: flex;
     align-items: center;
 }
