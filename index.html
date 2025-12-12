@@ -16,9 +16,9 @@
 </head>
 <body>
     <header>
-        <div class="logo-text">
-            stream tester
-        </div>
+        <a href="stream-tester" class="logo-link">
+            <div class="logo-text">stream tester</div>
+        </a>
         <div class="header-right">
             <button id="menu-btn" class="icon-link">
                 <span class="material-symbols-rounded">menu</span>
@@ -31,14 +31,17 @@
     <main>
         <div class="container">
             <div class="grid-container">
+                
                 <div class="player-column">
                     <div class="player-wrapper">
-                        <div id="video-container" data-shaka-player-container style="width:100%; height:100%">
-                            <video id="video" data-shaka-player autoplay style="width:100%; height:100%" poster="assets/video-poster.svg"></video>
+                        <div class="video-aspect-box">
+                            <div id="video-container" data-shaka-player-container>
+                                <video id="video" data-shaka-player autoplay poster="assets/video_poster.svg"></video>
+                            </div>
                         </div>
-                    </div>
-                    <div class="channel-info-bar">
-                        <h2 id="channel-name-display">No Channel Loaded</h2>
+                        <div class="channel-details-footer">
+                            <h2 id="channel-name-display">No Channel Loaded</h2>
+                        </div>
                     </div>
                 </div>
 
