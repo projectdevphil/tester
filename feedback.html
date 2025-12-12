@@ -11,7 +11,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Stream Tester" />
     <link rel="manifest" href="assets/site.webmanifest" />
-    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/static.css">
@@ -19,24 +18,33 @@
 <body>
     <div class="static-page-container">
         <header class="static-header">
-            <a href="/stream-tester" class="back-button" aria-label="Back to Stream Tester">
+            <a href="index.html" class="back-button" aria-label="Back to Stream Tester">
                 <span class="material-symbols-rounded">arrow_back</span>
             </a>
-            <h1>Feedback and Suggestions</h1>
+            <h1>Feedback</h1>
         </header>
 
-        <main class="content-card text-center">
+        <main class="content-card">
             <section>
-                <h2><span class="material-symbols-rounded">feedback</span> We Value Your Input</h2>
-                <p>We are constantly working to improve Stream Tester and your input is crucial. If you have any feedback, suggestions for new features, or if you've encountered a bug, please let us know. Your insights help us make this tool better for everyone. We appreciate you taking the time to help us grow and improve the application for the community.</p>
+                <h2>We Value Your Input</h2>
+                <p>We are constantly working to improve Stream Tester and your input is crucial. If you have any feedback, suggestions for new features, or if you've encountered a bug, please let us know. Your insights help us make this tool better for everyone.</p>
                 <p>The best way to reach out is through a direct message on PHCorner. We're active there and will get back to you as soon as possible.</p>
-                <a href="https://phcorner.org/members/buzzybees.2661880/" class="feedback-link" target="_blank" rel="noopener noreferrer">
-                    Direct Message through PHCorner
-                </a>
+                
+                <div style="margin-top: 25px; text-align: center;">
+                    <a href="https://phcorner.org/members/buzzybees.2661880/" class="action-btn" style="display: inline-block; width: auto; padding: 12px 30px; text-decoration: none; color: #000;" target="_blank" rel="noopener noreferrer">
+                        Message on PHCorner
+                    </a>
+                </div>
             </section>
         </main>
     </div>
     
-    <script src="js/script.js"></script>
+    <script>
+        const header = document.querySelector(".static-header");
+        window.addEventListener("scroll", () => {
+            header.classList.toggle("scrolled", window.scrollY > 10);
+        });
+        document.addEventListener('contextmenu', e => e.preventDefault());
+    </script>
 </body>
 </html>
