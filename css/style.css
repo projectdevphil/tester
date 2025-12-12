@@ -142,7 +142,7 @@ header.scrolled {
 }
 
 .channel-details-footer {
-    padding: 19px 20px;
+    padding: 20px;
     background-color: var(--card-background);
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -273,7 +273,7 @@ select option { background-color: #000; color: #fff; }
 .action-btn {
     background-color: var(--theme-color);
     color: #000;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 700;
     padding: 14px 0;
     width: 100%;
