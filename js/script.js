@@ -4,6 +4,7 @@ let player;
 let ui;
 let playlistData = [];
 let defaultStreamsData = {}; 
+
 const header = document.querySelector('header');
 const video = document.getElementById('video');
 const videoContainer = document.getElementById('video-container');
@@ -92,10 +93,11 @@ function setupUI() {
         btn.addEventListener('click', (e) => {
             const targetId = btn.getAttribute('data-target');
             const selectEl = document.getElementById(targetId);
+            
             if (selectEl && typeof selectEl.showPicker === 'function') {
-                selectEl.showPicker();
+                selectEl.showPicker(); 
             } else if (selectEl) {
-                selectEl.focus();
+                selectEl.focus(); 
             }
         });
     });
