@@ -27,13 +27,8 @@ body {
     user-select: none;
 }
 
-body.no-scroll {
-    overflow: hidden;
-}
-
-body::-webkit-scrollbar {
-    display: none;
-}
+body.no-scroll { overflow: hidden; }
+body::-webkit-scrollbar { display: none; }
 
 a, button, input, select {
     color: inherit;
@@ -51,6 +46,7 @@ button {
     padding: 0;
 }
 
+/* --- HEADER --- */
 header {
     align-items: center;
     backdrop-filter: none;
@@ -74,18 +70,22 @@ header.scrolled {
     border-bottom: var(--glass-border);
 }
 
-.logo-text {
-    font-size: 1.2rem;
-    font-weight: 800;
-    color: var(--text-color);
+.logo-link {
     display: flex;
     align-items: center;
+    text-decoration: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
-.header-right {
-    display: flex;
-    gap: 10px;
+.logo-text {
+    font-size: 1.2rem;
+    font-weight: 820;
+    color: var(--text-color);
 }
+
+.header-right { display: flex; gap: 10px; }
 
 .icon-link {
     align-items: center;
@@ -97,12 +97,14 @@ header.scrolled {
     transition: background 0.2s;
     width: 40px;
     height: 40px;
+    /* Prevent Long Press */
+    -webkit-touch-callout: none;
+    user-select: none;
 }
 
-.icon-link:hover {
-    background: rgba(255,255,255,0.1);
-}
+.icon-link:hover { background: rgba(255,255,255,0.1); }
 
+/* --- LAYOUT GRID --- */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -116,44 +118,45 @@ header.scrolled {
 }
 
 @media (min-width: 992px) {
-    .grid-container {
-        grid-template-columns: 1fr 400px; 
-    }
+    .grid-container { grid-template-columns: 1fr 400px; }
 }
 
+/* --- PLAYER CARD (UNIFIED) --- */
 .player-wrapper {
-    background-color: #000;
+    background-color: var(--card-background); /* Background applies to whole card */
     border-radius: var(--border-radius);
-    overflow: hidden;
-    position: relative;
-    aspect-ratio: 16/9;
     border: var(--glass-border);
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
-#video-container {
+/* The 16:9 container for video only */
+.video-aspect-box {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #000;
+    position: relative;
+}
+
+#video-container, #video {
     width: 100%;
     height: 100%;
 }
 
-#video {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-}
-
-.channel-info-bar {
-    background-color: var(--card-background);
-    border: var(--glass-border);
-    border-radius: var(--border-radius);
-    margin-top: 15px;
+/* The footer inside the player card */
+.channel-details-footer {
     padding: 20px;
+    background-color: var(--card-background);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.channel-info-bar h2 {
+.channel-details-footer h2 {
     font-size: 1.1rem;
     font-weight: 700;
     margin: 0;
+    color: var(--text-color);
 }
 
 .control-card {
@@ -163,6 +166,7 @@ header.scrolled {
     border: var(--glass-border);
 }
 
+/* --- INPUTS & FORMS --- */
 h2 {
     font-size: 1rem;
     font-weight: 700;
@@ -170,9 +174,7 @@ h2 {
     color: var(--text-color);
 }
 
-.input-group {
-    margin-bottom: 20px;
-}
+.input-group { margin-bottom: 20px; }
 
 .input-group label {
     display: block;
@@ -192,16 +194,15 @@ select {
     color: white;
     font-size: 0.9rem;
     padding: 12px 20px;
+    /* Add padding right so text doesn't hit the new circle arrow */
+    padding-right: 50px; 
     box-sizing: border-box;
     outline: none;
     transition: all 0.3s ease;
     appearance: none;
 }
 
-select option {
-    background-color: #000;
-    color: #fff;
-}
+select option { background-color: #000; color: #fff; }
 
 input[type="text"]:focus,
 select:focus {
@@ -209,25 +210,40 @@ select:focus {
     border-color: rgba(255, 255, 255, 0.3);
 }
 
+/* --- CUSTOM CIRCULAR DROPDOWN BUTTON --- */
 .select-wrapper {
     position: relative;
+    width: 100%;
 }
 
 .select-wrapper::after {
     content: 'expand_more';
     font-family: 'Material Symbols Rounded';
+    
+    /* Circle Container Styles */
     position: absolute;
-    right: 15px;
+    right: 5px; /* Spacing from right edge of input */
     top: 50%;
     transform: translateY(-50%);
-    pointer-events: none;
-    color: var(--text-secondary);
+    
+    width: 34px;
+    height: 34px;
+    background-color: rgba(255, 255, 255, 0.1); /* Circle BG */
+    border-radius: 50%;
+    
+    /* Flex to center the icon */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    color: var(--text-color);
+    font-size: 20px;
+    pointer-events: none; /* Click goes through to select */
+    border: 1px solid rgba(255,255,255,0.05);
 }
 
-.m3u-input-container {
-    display: flex;
-    gap: 10px;
-}
+/* M3U Input Area */
+.m3u-input-container { display: flex; gap: 10px; }
 
 #upload-m3u-button {
     background: rgba(255, 255, 255, 0.1);
@@ -241,11 +257,11 @@ select:focus {
     align-items: center;
     justify-content: center;
     transition: background 0.2s;
+    -webkit-touch-callout: none; 
+    user-select: none;
 }
 
-#upload-m3u-button:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
+#upload-m3u-button:hover { background: rgba(255, 255, 255, 0.2); }
 
 .action-btn {
     background-color: var(--theme-color);
@@ -261,15 +277,11 @@ select:focus {
     letter-spacing: 0.5px;
     transition: transform 0.2s, opacity 0.2s;
     margin-top: 10px;
+    -webkit-touch-callout: none;
 }
 
-.action-btn:active {
-    transform: scale(0.98);
-}
-
-.action-btn:hover {
-    opacity: 0.9;
-}
+.action-btn:active { transform: scale(0.98); }
+.action-btn:hover { opacity: 0.9; }
 
 .input-mode-switcher {
     background: rgba(0, 0, 0, 0.3);
@@ -289,11 +301,11 @@ select:focus {
     color: var(--text-secondary);
     z-index: 2;
     transition: color 0.3s;
+    -webkit-touch-callout: none;
+    user-select: none;
 }
 
-.input-mode-switcher button.active {
-    color: #000;
-}
+.input-mode-switcher button.active { color: #000; }
 
 .input-mode-switcher::before {
     content: '';
@@ -308,6 +320,7 @@ select:focus {
     z-index: 1;
 }
 
+/* --- FLOATING MENU --- */
 .floating-menu {
     backdrop-filter: blur(20px);
     background: var(--glass-bg);
@@ -331,11 +344,7 @@ select:focus {
     visibility: visible;
 }
 
-.floating-menu ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
+.floating-menu ul { list-style: none; margin: 0; padding: 0; }
 
 .floating-menu li {
     border-radius: 50px;
@@ -343,11 +352,11 @@ select:focus {
     font-size: 0.75rem;
     font-weight: 500;
     padding: 5px;
+    -webkit-touch-callout: none;
+    user-select: none;
 }
 
-.floating-menu li:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
+.floating-menu li:hover { background-color: rgba(255, 255, 255, 0.1); }
 
 .floating-menu li a {
     align-items: center;
@@ -356,6 +365,7 @@ select:focus {
     width: 100%;
     padding: 8px;
     box-sizing: border-box;
+    -webkit-touch-callout: none;
 }
 
 .site-footer {
@@ -364,11 +374,7 @@ select:focus {
     padding: 30px 20px;
     text-align: center;
 }
-
-.site-footer p {
-    font-size: 0.6rem;
-    margin: 5px 0;
-}
+.site-footer p { font-size: 0.6rem; margin: 5px 0; }
 
 hr {
     border: 0;
@@ -385,16 +391,6 @@ hr {
     border-radius: 12px;
     margin-top: 20px;
     display: none;
-}
-
-.shaka-video-container,
-.shaka-settings-menu,
-.shaka-overflow-menu {
-    font-family: 'BR Sonoma', sans-serif !important;
-    font-weight: 700;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    overflow-y: auto; 
 }
 
 .shaka-overflow-menu::-webkit-scrollbar, 
