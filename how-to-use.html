@@ -11,7 +11,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Stream Tester" />
     <link rel="manifest" href="assets/site.webmanifest" />
-    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/monaspace-font/neon.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="css/style.css">
@@ -20,22 +19,22 @@
 <body>
     <div class="static-page-container">
         <header class="static-header">
-            <a href="/stream-tester" class="back-button" aria-label="Back to Stream Tester">
+            <a href="stream-tester" class="back-button" aria-label="Back to Stream Tester">
                 <span class="material-symbols-rounded">arrow_back</span>
             </a>
             <h1>How to Use</h1>
         </header>
 
         <main class="content-card">
-            <p>The player is designed to be intuitive. Here’s how to get started:</p>
+            <p style="margin-top: 0;">The player is designed to be intuitive. Here’s how to get started:</p>
 
             <section>
-                <h3>1. Load a Playlist</h3>
+                <h2>1. Load a Playlist</h2>
                 <ol>
                     <li>Ensure you are in <strong>Playlist</strong> mode.</li>
                     <li>Use the <strong>Source</strong> dropdown to choose your desired method:
                         <ul>
-                            <li><strong>Upload:</strong> To use your own M3U file. Click the <strong>`+`</strong> button and select an `.m3u` file from your device. The playlist will load automatically.</li>
+                            <li><strong>Upload:</strong> To use your own M3U file. Click the <strong>+</strong> button and select an <code>.m3u</code> file from your device.</li>
                             <li><strong>URL Input:</strong> Paste the URL of your M3U playlist into the input field and click <strong>Load Playlist</strong>.</li>
                             <li><strong>Samples:</strong> To select from a list of pre-loaded channels for quick testing.</li>
                         </ul>
@@ -47,43 +46,49 @@
             <hr>
 
             <section>
-                <h3>2. Manual Input</h3>
+                <h2>2. Manual Input</h2>
                 <ol>
                     <li>Switch to the <strong>Manual</strong> input mode.</li>
-                    <li>Enter the URL for your `.m3u8` (HLS) or `.mpd` (DASH) stream in the <strong>Manifest URI</strong> field.</li>
+                    <li>Enter the URL for your <code>.m3u8</code> (HLS) or <code>.mpd</code> (DASH) stream in the <strong>Manifest URI</strong> field.</li>
                     <li>For <strong>MPEG-DASH (.mpd) streams</strong>, a DRM section will automatically appear. Use the <strong>DRM Type</strong> dropdown to select your protection method:
                         <ul>
-                            <li><strong>For License Server (e.g., Widevine):</strong> Select <strong>License URL (com.widevine.alpha)</strong> and paste the server URL into the <strong>License Server URL</strong> field.<br><em>Note: This feature is not working for a while.</em></li>
-                            <li><strong>For ClearKey:</strong> Select <strong>ClearKey (org.w3.clearkey)</strong> and enter the <strong>Key ID (KID)</strong> and the secret <strong>Key</strong> into their respective fields.</li>
+                            <li><strong>For License Server (e.g., Widevine):</strong> Select <strong>License URL (com.widevine.alpha)</strong> and paste the server URL. <br><em style="font-size: 0.75rem; color: #888;">(Note: Cross-origin restrictions may apply depending on the server).</em></li>
+                            <li><strong>For ClearKey:</strong> Select <strong>ClearKey (org.w3.clearkey)</strong> and enter the <strong>Key ID (KID)</strong> and the secret <strong>Key</strong>.</li>
                         </ul>
                     </li>
-                    <li>Click <strong>Load Manual Input</strong> to start the stream.</li>
+                    <li>Click <strong>Load Stream</strong> to start playback.</li>
                 </ol>
             </section>
 
             <hr>
             
             <section>
-                <h3>Manual Input Examples</h3>
+                <h2>Manual Input Examples</h2>
                 <p><strong>Example 1: Encrypted MPEG-DASH with a License Server</strong></p>
-                <code>
-Manifest URI: https://storage.googleapis.com/shaka-demo-assets/angel-one-widevine/dash.mpd
-DRM Type:     License URL (com.widevine.alpha)
-License URL:  https://cwip-shaka-proxy.appspot.com/no_auth
-                </code>
+                <div style="background: #000; padding: 15px; border-radius: 8px; font-family: monospace; font-size: 0.75rem; color: #ddd; overflow-x: auto;">
+                    <div>Manifest URI: https://storage.googleapis.com/shaka-demo-assets/angel-one-widevine/dash.mpd</div>
+                    <div>DRM Type:     License URL (com.widevine.alpha)</div>
+                    <div>License URL:  https://cwip-shaka-proxy.appspot.com/no_auth</div>
+                </div>
             
                 <p style="margin-top: 1.5rem;"><strong>Example 2: Encrypted MPEG-DASH with ClearKey</strong></p>
-                <code>
-Manifest URI: https://storage.googleapis.com/shaka-demo-assets/sintel-clearkey/dash.mpd
-DRM Type:     ClearKey (org.w3.clearkey)
-Key ID (KID): dee271b3e6b3532791467a5344333a34
-Key:          045d222b513438449c21d22e0380064d
-                </code>
+                <div style="background: #000; padding: 15px; border-radius: 8px; font-family: monospace; font-size: 0.75rem; color: #ddd; overflow-x: auto;">
+                    <div>Manifest URI: https://storage.googleapis.com/shaka-demo-assets/sintel-clearkey/dash.mpd</div>
+                    <div>DRM Type:     ClearKey (org.w3.clearkey)</div>
+                    <div>Key ID (KID): dee271b3e6b3532791467a5344333a34</div>
+                    <div>Key:          045d222b513438449c21d22e0380064d</div>
+                </div>
             </section>
 
         </main>
     </div>
 
-    <script src="js/script.js"></script>
+    <script>
+        const header = document.querySelector(".static-header");
+        window.addEventListener("scroll", () => {
+            header.classList.toggle("scrolled", window.scrollY > 10);
+        });
+        document.addEventListener('contextmenu', e => e.preventDefault());
+    </script>
 </body>
 </html>
