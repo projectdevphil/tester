@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Stream Tester by Project Dev</title>
     <meta name="theme-color" content="#000000">
-    <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
-    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="icon" type="image/png" href="assets/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="shortcut icon" href="assets/favicon.ico" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="https://unpkg.com/mux.js@5.10.0/dist/mux.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/shaka-player@4.16.9/dist/shaka-player.ui.min.js"></script>
@@ -17,7 +17,7 @@
 <body>
     <header>
         <div class="logo-text">
-            stream Tester
+            stream tester
         </div>
         <div class="header-right">
             <button id="menu-btn" class="icon-link">
@@ -26,21 +26,15 @@
         </div>
     </header>
 
-    <div id="floating-menu" class="floating-menu">
-        <!-- Menu items will be injected by script or manual -->
-        <ul>
-            <li><a href="/about.html"><span class="material-symbols-rounded">info</span> About Us</a></li>
-        </ul>
-    </div>
+    <div id="floating-menu" class="floating-menu"></div>
 
     <main>
         <div class="container">
             <div class="grid-container">
-                <!-- Video Player Section -->
                 <div class="player-column">
                     <div class="player-wrapper">
                         <div id="video-container" data-shaka-player-container style="width:100%; height:100%">
-                            <video id="video" data-shaka-player autoplay style="width:100%; height:100%"></video>
+                            <video id="video" data-shaka-player autoplay style="width:100%; height:100%" poster="assets/video-poster.svg"></video>
                         </div>
                     </div>
                     <div class="channel-info-bar">
@@ -48,18 +42,14 @@
                     </div>
                 </div>
 
-                <!-- Controls Section -->
                 <div class="controls-column">
                     <div class="control-card">
                         
-                        <!-- Switcher -->
                         <div class="input-mode-switcher">
                             <button id="add-mode-btn" class="active">Playlist</button>
                             <button id="manual-mode-btn">Manual</button>
-                            <!-- Note: JS needs to handle the 'active' class on click -->
                         </div>
 
-                        <!-- Playlist Mode -->
                         <div id="add-mode-container">
                             <h2>Load Playlist</h2>
                             <div class="input-group">
@@ -98,7 +88,6 @@
                             </div>
                         </div>
 
-                        <!-- Manual Mode -->
                         <div id="manual-mode-container" style="display: none;">
                             <h2>Manual Input</h2>
                             <div class="input-group">
@@ -106,18 +95,19 @@
                                 <input type="text" id="manifestUri" placeholder="HLS or MPEG-DASH URI">
                             </div>
 
-                            <div class="drm-fields">
+                            <div class="drm-fields" style="display: none;">
                                 <div class="input-group">
                                     <label for="licenseTypeSelect">DRM Type (MPEG-DASH)</label>
                                     <div class="select-wrapper">
                                         <select id="licenseTypeSelect">
-                                            <option value="com.widevine.alpha" selected>License URL (Widevine)</option>
+                                            <option value="none">None</option>
+                                            <option value="com.widevine.alpha">License URL (Widevine)</option>
                                             <option value="org.w3.clearkey">ClearKey</option>
                                         </select>
                                     </div>
                                 </div>
 
-                                <div id="license-url-container">
+                                <div id="license-url-container" style="display: none;">
                                     <div class="input-group">
                                         <label for="licenseServerUrl">License Server URL</label>
                                         <input type="text" id="licenseServerUrl" placeholder="https://license.server...">
@@ -153,52 +143,5 @@
     </footer>
 
     <script src="js/script.js"></script>
-    <script>
-        // Simple script to handle header transparency if main script doesn't
-        const header = document.querySelector('header');
-        window.addEventListener('scroll', () => {
-            if(window.scrollY > 10) header.classList.add('scrolled');
-            else header.classList.remove('scrolled');
-        });
-        
-        // Simple Toggle animation logic for CSS visuals
-        const modeBtns = document.querySelectorAll('.input-mode-switcher button');
-        const switcher = document.querySelector('.input-mode-switcher');
-        
-        modeBtns.forEach((btn, index) => {
-            btn.addEventListener('click', () => {
-                modeBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                
-                // Update CSS pseudo element position via transform
-                // 0 = left (0%), 1 = right (100%)
-                const transformValue = index === 0 ? 'translateX(0)' : 'translateX(100%)';
-                // Note: accurate sliding requires adjusting the width calculation in CSS or here
-                // For simplicity in this generated code, we assume the CSS transition logic provided earlier
-                
-                // Update containers
-                if(index === 0) {
-                    document.getElementById('add-mode-container').style.display = 'block';
-                    document.getElementById('manual-mode-container').style.display = 'none';
-                    switcher.querySelector('::before').style.transform = 'translateX(0)'; // This won't work on pseudo elements via JS directly without custom props
-                } else {
-                    document.getElementById('add-mode-container').style.display = 'none';
-                    document.getElementById('manual-mode-container').style.display = 'block';
-                }
-            });
-        });
-        
-        // Fix for pseudo element animation via Custom Property
-        modeBtns[0].addEventListener('click', () => switcher.style.setProperty('--slide-pos', '5px'));
-        modeBtns[1].addEventListener('click', () => switcher.style.setProperty('--slide-pos', 'calc(50% + 2.5px)'));
-    </script>
-    <style>
-        /* Small fix for the switcher animation using CSS var injected by JS */
-        .input-mode-switcher::before {
-            left: var(--slide-pos, 5px);
-            transition: left 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
-            transform: none !important;
-        }
-    </style>
 </body>
 </html>
