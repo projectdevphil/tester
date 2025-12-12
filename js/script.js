@@ -285,7 +285,7 @@ function base64UrlToHex(base64Url) {
 }
 
 function populatePlaylistChannels() {
-    channelSelector.innerHTML = '<option value="">-- Select a channel --</option>';
+    channelSelector.innerHTML = '<option value="">Select a channel</option>';
     if (playlistData.length > 0) {
         playlistData.forEach((ch, i) => channelSelector.appendChild(new Option(ch.name, `playlist_${i}`)));
         alert(`${playlistData.length} channels loaded.`);
@@ -293,7 +293,7 @@ function populatePlaylistChannels() {
 }
 
 function populateDefaultChannels() {
-    channelSelector.innerHTML = '<option value="">-- Select a Sample Stream --</option>';
+    channelSelector.innerHTML = '<option value="">Select a Sample Stream</option>';
     Object.keys(defaultStreamsData).forEach(key => {
         channelSelector.appendChild(new Option(key.replace(/_/g, ' '), `default_${key}`));
     });
