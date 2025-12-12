@@ -124,15 +124,27 @@ function renderMenu() {
         floatingMenu.innerHTML = `
         <ul>
             <li>
-                <a href="/about.html">
+                <a href="https://litestream-iptv.vercel.app/home" target="_blank">
+                    <span class="material-symbols-rounded">sensors</span>
+                    <span>Litestream</span>
+                </a>
+            </li>
+            <li>
+                <a href="about">
                     <span class="material-symbols-rounded">info</span>
                     <span>About Us</span>
                 </a>
             </li>
             <li>
-                <a href="https://litestream-iptv.vercel.app/home" target="_blank">
-                    <span class="material-symbols-rounded">sensors</span>
-                    <span>Litestream</span>
+                <a href="how-to-use">
+                    <span class="material-symbols-rounded">help_center</span>
+                    <span>How to Use</span>
+                </a>
+            </li>
+            <li>
+                <a href="feedback">
+                    <span class="material-symbols-rounded">feedback</span>
+                    <span>Feedback</span>
                 </a>
             </li>
         </ul>`;
