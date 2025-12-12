@@ -142,7 +142,7 @@ header.scrolled {
 }
 
 .channel-details-footer {
-    padding: 15px 20px;
+    padding: 19px 20px;
     background-color: var(--card-background);
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -357,7 +357,7 @@ select option { background-color: #000; color: #fff; }
     cursor: pointer;
     font-size: 0.75rem;
     font-weight: 500;
-    padding: 5px;
+    padding: 10px;
     -webkit-touch-callout: none;
     user-select: none;
 }
@@ -369,7 +369,6 @@ select option { background-color: #000; color: #fff; }
     display: flex;
     gap: 10px;
     width: 100%;
-    padding: 8px;
     box-sizing: border-box;
     -webkit-touch-callout: none; 
 }
@@ -397,6 +396,16 @@ hr {
     border-radius: 12px;
     margin-top: 20px;
     display: none;
+}
+
+.shaka-video-container,
+.shaka-settings-menu,
+.shaka-overflow-menu {
+    font-family: 'BR Sonoma', sans-serif !important;
+    font-weight: 700;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    overflow-y: auto; 
 }
 
 .shaka-overflow-menu::-webkit-scrollbar, 
