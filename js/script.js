@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', initApp);
 
-// --- GLOBAL VARIABLES ---
 let player;
 let ui;
 let playlistData = [];
@@ -33,7 +32,6 @@ const clearkeyContainer = document.getElementById('clearkey-container');
 const k1Input = document.getElementById('k1');
 const k2Input = document.getElementById('k2');
 
-// --- INITIALIZATION ---
 function initApp() {
     setupUI();
     setupPlayerEventListeners();
@@ -50,7 +48,6 @@ function initApp() {
     }
 }
 
-// --- UI SETUP & INTERACTION ---
 function setupUI() {
     window.addEventListener('scroll', () => {
         if (window.scrollY > 10) {
@@ -90,7 +87,20 @@ function setupUI() {
         });
     }
 
-    const noContextMenuElements = document.querySelectorAll('.logo-link, .icon-link, .floating-menu, img, a');
+    const dropdownBtns = document.querySelectorAll('.dropdown-circle-btn');
+    dropdownBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const targetId = btn.getAttribute('data-target');
+            const selectEl = document.getElementById(targetId);
+            if (selectEl && typeof selectEl.showPicker === 'function') {
+                selectEl.showPicker();
+            } else if (selectEl) {
+                selectEl.focus();
+            }
+        });
+    });
+
+    const noContextMenuElements = document.querySelectorAll('.logo-link, .icon-link, .dropdown-circle-btn, .floating-menu, img, a');
     noContextMenuElements.forEach(el => {
         el.addEventListener('contextmenu', e => e.preventDefault());
     });
@@ -138,7 +148,6 @@ function handleRouting() {
     else switchInputMode('playlist', false);
 }
 
-// --- PLAYER LOGIC ---
 function initPlayer() {
     player = new shaka.Player(video);
     ui = new shaka.ui.Overlay(player, videoContainer, video);
@@ -181,7 +190,6 @@ async function loadStream(displayName = 'Manual Stream') {
     }
 }
 
-// --- DATA & PARSING ---
 async function fetchDefaultStreams() {
     try {
         const response = await fetch('js/getChannels.js'); 
@@ -274,7 +282,6 @@ function base64UrlToHex(base64Url) {
     } catch (e) { return null; }
 }
 
-// --- UI POPULATION ---
 function populatePlaylistChannels() {
     channelSelector.innerHTML = '<option value="">-- Select a channel --</option>';
     if (playlistData.length > 0) {
@@ -333,7 +340,6 @@ function handleSourceChange(event) {
     }
 }
 
-// --- VISIBILITY & DETECTION LOGIC ---
 function toggleDrmBlockVisibility() {
     const val = manifestUriInput.value.toLowerCase().trim();
     if (val.includes('.mpd')) {
