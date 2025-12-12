@@ -57,11 +57,14 @@
                             <h2>Load Playlist</h2>
                             <div class="input-group">
                                 <label for="sourceSelector">Source</label>
-                                <div class="select-wrapper">
+                                <div class="select-row">
                                     <select id="sourceSelector">
                                         <option value="playlist" selected>Upload</option>
                                         <option value="default">Samples</option>
                                     </select>
+                                    <div class="dropdown-circle-btn" data-target="sourceSelector">
+                                        <span class="material-symbols-rounded">expand_more</span>
+                                    </div>
                                 </div>
                             </div>
                             
@@ -83,10 +86,13 @@
 
                             <div class="input-group">
                                 <label for="channelSelector">Select Channel</label>
-                                <div class="select-wrapper">
+                                <div class="select-row">
                                     <select id="channelSelector">
                                         <option value="">-- Select a source first --</option>
                                     </select>
+                                    <div class="dropdown-circle-btn" data-target="channelSelector">
+                                        <span class="material-symbols-rounded">expand_more</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -101,12 +107,15 @@
                             <div class="drm-fields" style="display: none;">
                                 <div class="input-group">
                                     <label for="licenseTypeSelect">DRM Type (MPEG-DASH)</label>
-                                    <div class="select-wrapper">
+                                    <div class="select-row">
                                         <select id="licenseTypeSelect">
                                             <option value="none">None</option>
                                             <option value="com.widevine.alpha">License URL (Widevine)</option>
                                             <option value="org.w3.clearkey">ClearKey</option>
                                         </select>
+                                        <div class="dropdown-circle-btn" data-target="licenseTypeSelect">
+                                            <span class="material-symbols-rounded">expand_more</span>
+                                        </div>
                                     </div>
                                 </div>
 
