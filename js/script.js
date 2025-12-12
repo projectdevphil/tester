@@ -176,18 +176,9 @@ function handleRouting() {
     }
 }
 
-// --- PLAYER LOGIC ---
 function initPlayer() {
-    // Create Player
     player = new shaka.Player(video);
-    
-    // Create UI Overlay
     ui = new shaka.ui.Overlay(player, videoContainer, video);
-    ui.configure({
-        'controlPanelElements': ['play_pause', 'time_and_duration', 'spacer', 'mute', 'volume', 'fullscreen', 'overflow_menu'],
-        'overflowMenuButtons': ['quality', 'language', 'captions', 'playback_rate', 'cast']
-    });
-
     player.addEventListener('error', onError);
 }
 
