@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', initApp);
 
+// --- GLOBAL VARIABLES ---
 let player;
 let ui;
 let playlistData = [];
 let defaultStreamsData = {}; 
-
 const header = document.querySelector('header');
 const video = document.getElementById('video');
 const videoContainer = document.getElementById('video-container');
@@ -33,6 +33,7 @@ const clearkeyContainer = document.getElementById('clearkey-container');
 const k1Input = document.getElementById('k1');
 const k2Input = document.getElementById('k2');
 
+// --- INITIALIZATION ---
 function initApp() {
     setupUI();
     setupPlayerEventListeners();
@@ -41,14 +42,15 @@ function initApp() {
     
     if (shaka.Player.isBrowserSupported()) {
         initPlayer();
-        handleRouting();
-        fetchDefaultStreams();
-        renderMenu();
+        handleRouting(); 
+        fetchDefaultStreams(); 
+        renderMenu(); 
     } else {
         showError('Browser not supported by Shaka Player');
     }
 }
 
+// --- UI SETUP & INTERACTION ---
 function setupUI() {
     window.addEventListener('scroll', () => {
         if (window.scrollY > 10) {
@@ -88,8 +90,8 @@ function setupUI() {
         });
     }
 
-    const protectedElements = document.querySelectorAll('img, a');
-    protectedElements.forEach(el => {
+    const noContextMenuElements = document.querySelectorAll('.logo-link, .icon-link, .floating-menu, img, a');
+    noContextMenuElements.forEach(el => {
         el.addEventListener('contextmenu', e => e.preventDefault());
     });
 }
@@ -103,6 +105,9 @@ function renderMenu() {
             <li><a href="how-to-use"><span class="material-symbols-rounded">help_center</span> How to Use</a></li>
             <li><a href="feedback"><span class="material-symbols-rounded">feedback</span> Feedback</a></li>
         </ul>`;
+        
+        const links = floatingMenu.querySelectorAll('a');
+        links.forEach(l => l.addEventListener('contextmenu', e => e.preventDefault()));
     }
 }
 
@@ -133,6 +138,7 @@ function handleRouting() {
     else switchInputMode('playlist', false);
 }
 
+// --- PLAYER LOGIC ---
 function initPlayer() {
     player = new shaka.Player(video);
     ui = new shaka.ui.Overlay(player, videoContainer, video);
@@ -152,6 +158,7 @@ async function loadStream(displayName = 'Manual Stream') {
 
     const config = { drm: {} };
     const selectedDrmType = licenseTypeSelect.value;
+    
     if (drmFieldsContainer.style.display !== 'none' && selectedDrmType !== 'none') {
         if (selectedDrmType === 'com.widevine.alpha') {
             const licenseServer = licenseServerUrlInput.value.trim();
@@ -174,6 +181,7 @@ async function loadStream(displayName = 'Manual Stream') {
     }
 }
 
+// --- DATA & PARSING ---
 async function fetchDefaultStreams() {
     try {
         const response = await fetch('js/getChannels.js'); 
@@ -266,6 +274,7 @@ function base64UrlToHex(base64Url) {
     } catch (e) { return null; }
 }
 
+// --- UI POPULATION ---
 function populatePlaylistChannels() {
     channelSelector.innerHTML = '<option value="">-- Select a channel --</option>';
     if (playlistData.length > 0) {
@@ -324,6 +333,7 @@ function handleSourceChange(event) {
     }
 }
 
+// --- VISIBILITY & DETECTION LOGIC ---
 function toggleDrmBlockVisibility() {
     const val = manifestUriInput.value.toLowerCase().trim();
     if (val.includes('.mpd')) {
