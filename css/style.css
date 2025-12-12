@@ -46,7 +46,6 @@ button {
     padding: 0;
 }
 
-/* --- HEADER --- */
 header {
     align-items: center;
     backdrop-filter: none;
@@ -77,11 +76,12 @@ header.scrolled {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     user-select: none;
+    cursor: pointer;
 }
 
 .logo-text {
     font-size: 1.2rem;
-    font-weight: 820;
+    font-weight: 840;
     color: var(--text-color);
 }
 
@@ -97,14 +97,12 @@ header.scrolled {
     transition: background 0.2s;
     width: 40px;
     height: 40px;
-    /* Prevent Long Press */
     -webkit-touch-callout: none;
     user-select: none;
 }
 
 .icon-link:hover { background: rgba(255,255,255,0.1); }
 
-/* --- LAYOUT GRID --- */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -121,9 +119,8 @@ header.scrolled {
     .grid-container { grid-template-columns: 1fr 400px; }
 }
 
-/* --- PLAYER CARD (UNIFIED) --- */
 .player-wrapper {
-    background-color: var(--card-background); /* Background applies to whole card */
+    background-color: var(--card-background);
     border-radius: var(--border-radius);
     border: var(--glass-border);
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
@@ -132,7 +129,6 @@ header.scrolled {
     flex-direction: column;
 }
 
-/* The 16:9 container for video only */
 .video-aspect-box {
     width: 100%;
     aspect-ratio: 16 / 9;
@@ -145,7 +141,6 @@ header.scrolled {
     height: 100%;
 }
 
-/* The footer inside the player card */
 .channel-details-footer {
     padding: 20px;
     background-color: var(--card-background);
@@ -153,8 +148,8 @@ header.scrolled {
 }
 
 .channel-details-footer h2 {
-    font-size: 1.1rem;
-    font-weight: 700;
+    font-size: 0.9rem;
+    font-weight: 400;
     margin: 0;
     color: var(--text-color);
 }
@@ -166,7 +161,6 @@ header.scrolled {
     border: var(--glass-border);
 }
 
-/* --- INPUTS & FORMS --- */
 h2 {
     font-size: 1rem;
     font-weight: 700;
@@ -185,8 +179,7 @@ h2 {
     text-transform: uppercase;
 }
 
-input[type="text"],
-select {
+input[type="text"] {
     width: 100%;
     background: var(--input-bg);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -194,55 +187,67 @@ select {
     color: white;
     font-size: 0.9rem;
     padding: 12px 20px;
-    /* Add padding right so text doesn't hit the new circle arrow */
-    padding-right: 50px; 
     box-sizing: border-box;
     outline: none;
     transition: all 0.3s ease;
     appearance: none;
 }
 
+.select-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+}
+
+.select-row select {
+    flex-grow: 1;
+    width: 0;
+    background: var(--input-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    color: white;
+    font-size: 0.9rem;
+    padding: 12px 20px;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
 select option { background-color: #000; color: #fff; }
 
-input[type="text"]:focus,
-select:focus {
+.select-row select:focus {
     background: rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.3);
 }
 
-/* --- CUSTOM CIRCULAR DROPDOWN BUTTON --- */
-.select-wrapper {
-    position: relative;
-    width: 100%;
-}
-
-.select-wrapper::after {
-    content: 'expand_more';
-    font-family: 'Material Symbols Rounded';
-    
-    /* Circle Container Styles */
-    position: absolute;
-    right: 5px; /* Spacing from right edge of input */
-    top: 50%;
-    transform: translateY(-50%);
-    
-    width: 34px;
-    height: 34px;
-    background-color: rgba(255, 255, 255, 0.1); /* Circle BG */
+.dropdown-circle-btn {
+    width: 42px;
+    height: 42px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 50%;
-    
-    /* Flex to center the icon */
     display: flex;
     align-items: center;
     justify-content: center;
-    
+    cursor: pointer;
+    flex-shrink: 0;
     color: var(--text-color);
-    font-size: 20px;
-    pointer-events: none; /* Click goes through to select */
-    border: 1px solid rgba(255,255,255,0.05);
+    transition: background 0.2s;
+    user-select: none;
+    -webkit-touch-callout: none;
 }
 
-/* M3U Input Area */
+.dropdown-circle-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.dropdown-circle-btn .material-symbols-rounded {
+    font-size: 20px;
+    pointer-events: none;
+}
+
 .m3u-input-container { display: flex; gap: 10px; }
 
 #upload-m3u-button {
@@ -320,7 +325,6 @@ select:focus {
     z-index: 1;
 }
 
-/* --- FLOATING MENU --- */
 .floating-menu {
     backdrop-filter: blur(20px);
     background: var(--glass-bg);
@@ -365,7 +369,7 @@ select:focus {
     width: 100%;
     padding: 8px;
     box-sizing: border-box;
-    -webkit-touch-callout: none;
+    -webkit-touch-callout: none; 
 }
 
 .site-footer {
