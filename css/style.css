@@ -105,7 +105,7 @@ header.scrolled {
 
 .container {
     max-width: 1200px;
-    margin: 20px 0 0 0;
+    margin: 20px auto;
     padding: 0 20px 40px 20px;
 }
 
@@ -116,7 +116,19 @@ header.scrolled {
 }
 
 @media (min-width: 992px) {
-    .grid-container { grid-template-columns: 1fr 400px; }
+    main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: calc(100vh - 60px);
+        padding-bottom: 60px;
+        box-sizing: border-box;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr 400px; 
+        align-items: start;
+    }
 }
 
 .player-wrapper {
