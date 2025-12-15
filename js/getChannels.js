@@ -19,6 +19,15 @@
     "Sample_6_(MP4_compatible_with_HLS)": {
         "url": "https://projectdevphil.github.io/stream-tester/assets/samples/sample_4.mp4"
     },
+    "Boots S1 - Preview (Netflix TV Series)": {
+        "url": "https://occ-0-1763-395.1.nflxso.net/so/soa3/926/1973854540602986496.mp4?v=1&e=1763730070&t=M70_vUWeZ8y-LclACLaClxPxSPY"
+    },
+    "Boots S1 - Trailer (Netflix TV Series)": {
+        "url": "https://vs-prodamdfandango.akamaized.net/out/v1/9e21ac13e637402bb92e5a0b0103bfcf/24179244572d48768920647994272718/55cfc6748196457d965dfd98aa2d46b8/index.m3u8"
+    },
+    "Heated Rivalry S1 - Trailer (Crave Original)": {
+        "url": "https://vs-prodamdfandango.akamaized.net/out/v1/f743a3d65dfa458b986431035c6197ec/24179244572d48768920647994272718/55cfc6748196457d965dfd98aa2d46b8/index.m3u8"
+    },
     "Charli XCX - Blame It On Your Love feat. Lizzo [Official Video]": {
         "url": "https://projectdevphil.github.io/stream-tester/assets/samples/sample_2.mp4"
     },
