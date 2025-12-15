@@ -43,5 +43,30 @@
         "url": "https://abslive.akamaized.net/dash/live/2028025/mor3/manifest.mpd",
         "k1": "7e5905e0a87641798a200510f01ae5ca",
         "k2": "814310518395440d57c67f2ef70ea250"
+    },
+    "HGTV": {
+        "url": "https://unifi-live2.secureswiftcontent.com/Content/DASH/Live/channel(HGTV)/master.mpd",
+        "k1": "143c537a533b4e53a7137703bc92c0f2",
+        "k2": "551cc5be6820a5b44d099dc7ace177f0"
+    },
+    "BBC Earth": {
+        "url": "https://unifi-live2.secureswiftcontent.com/Content/DASH/Live/channel(BBCEarth)/master.mpd",
+        "k1": "5381b805544744d8b6344de564d327f5",
+        "k2": "d5fa0ec68c6a7c86c19f630cfd353606"
+    },
+    "AFN": {
+        "url": "https://linearjitp-playback.astro.com.my/dash-wv/linear/500/default_ott.mpd",
+        "k1": "346b9f41e2933748c8861f82932e0110",
+        "k2": "cf0cffb637b81598a27bd6b0d90d65a8"
+    },
+    "ONE": {
+        "url": "https://linearjitp-playback.astro.com.my/dash-wv/linear/2702/default_ott.mpd",
+        "k1": "d8fe398c79065173fa9788f226056510",
+        "k2": "45e77e6a8ba767b63cacfdb01ef2ac29"
+    },
+    "Animal Planet India": {
+        "url": "https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Animalplanethd2/default/index.mpd",
+        "k1": "df81f15150f74c799fdde64ef49dfb75",
+        "k2": "05794a012ae74d77953f2b9fae6804c7"
     }
 }
