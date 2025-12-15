@@ -29,5 +29,5 @@
         "url": "https://iwant-video.akamaized.net/abscbnchristmasstationsid2025/92c31981-db85-4398-8b74-88d870bb0536/manifest.mpd",
         "k1": "664d4714d0124f7ea8d69b487cf243e0",
         "k2": "b84e0065a763e578ecd8878a2c59d12b"
-    },
+    }
 }
