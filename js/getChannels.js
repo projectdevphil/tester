@@ -38,5 +38,10 @@
         "url": "https://iwant-video.akamaized.net/abscbnchristmasstationsid2025/92c31981-db85-4398-8b74-88d870bb0536/manifest.mpd",
         "k1": "664d4714d0124f7ea8d69b487cf243e0",
         "k2": "b84e0065a763e578ecd8878a2c59d12b"
+    },
+    "MOR": {
+        "url": "https://abslive.akamaized.net/dash/live/2028025/mor3/manifest.mpd",
+        "k1": "7e5905e0a87641798a200510f01ae5ca",
+        "k2": "814310518395440d57c67f2ef70ea250"
     }
 }
