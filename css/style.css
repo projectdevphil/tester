@@ -101,7 +101,7 @@ header.scrolled {
     user-select: none;
 }
 
-.icon-link:hover { background: rgba(255,255,255,0.1); }
+.icon-link:hover { background: rgba(255,255,255,0.1); border: var(--glass-border); }
 
 .container {
     max-width: 1200px;
