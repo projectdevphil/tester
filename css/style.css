@@ -310,7 +310,6 @@ select option { background-color: #000; color: #fff; }
     display: flex;
     position: relative;
     margin-bottom: 25px;
-    border: 1px solid rgba(255,255,255,0.05);
 }
 
 .input-mode-switcher button {
