@@ -59,6 +59,7 @@ body.no-scroll {
 
 .back-button:hover {
     background: rgba(255, 255, 255, 0.2);
+    border: var(--glass-border);
 }
 
 .content-card {
