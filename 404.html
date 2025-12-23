@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <title>Redirecting...</title>
     <script>
-      const path = window.location.pathname;
-      const pathSegments = path.split('/').filter(Boolean);
-      const repoName = pathSegments.length > 0 ? pathSegments[0] : '';
-      const route = '/' + (pathSegments.length > 1 ? pathSegments.slice(1).join('/') : '');
-      sessionStorage.setItem('redirectPath', route);
-      window.location.replace(window.location.origin + '/' + repoName);
+          const path = window.location.pathname;
+          const pathSegments = path.split('/').filter(Boolean);
+          const repoName = pathSegments.length > 0 ? pathSegments[0] : '';
+          const route = '/' + (pathSegments.length > 1 ? pathSegments.slice(1).join('/') : '');
+          sessionStorage.setItem('redirectPath', route);
+          window.location.replace(window.location.origin + '/' + repoName);
     </script>
     <link rel="icon" type="image/png" href="assets/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
