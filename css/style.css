@@ -106,7 +106,7 @@ header.scrolled {
 .container {
     max-width: 1200px;
     margin: 20px auto;
-    padding: 0 20px 40px 20px;
+    padding: 0 20px;
 }
 
 .grid-container {
@@ -387,8 +387,7 @@ select option { background-color: #000; color: #fff; }
 
 .site-footer {
     color: #666;
-    margin-top: 40px;
-    padding: 30px 20px;
+    padding: 20px;
     text-align: center;
 }
 .site-footer p { font-size: 0.6rem; margin: 5px 0; }
