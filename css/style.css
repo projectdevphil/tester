@@ -141,6 +141,14 @@ header.scrolled {
         width: 100%;
     }
 
+    .control-card {
+        position: sticky;
+        top: 80px;
+        z-index: 10;
+        max-height: calc(100vh - 150px);
+        overflow-y: auto;
+    }
+
     .video-aspect-box {
         width: 100%;
         padding-top: 56.25%;
