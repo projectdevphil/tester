@@ -244,3 +244,18 @@ a, img, button,
 .close-hint {
     position: absolute; bottom: 40px; color: #666; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;
 }
+
+@media (min-width: 992px) {
+    main {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        min-height: calc(100vh - 60px);
+        box-sizing: border-box;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr 400px; 
+        align-items: start;
+    }
+}
