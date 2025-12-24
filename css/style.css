@@ -148,7 +148,6 @@ header.scrolled {
         height: 0;
         background-color: #000;
         overflow: hidden;
-        border-radius: var(--border-radius);
     }
 
     #video-container, 
@@ -174,9 +173,6 @@ header.scrolled {
         bottom: 0;
         left: 0;
         width: 100%;
-        background: var(--glass-bg);
-        backdrop-filter: blur(10px);
-        border-top: var(--glass-border);
         padding: 10px 0;
         z-index: 100;
         margin: 0;
@@ -184,7 +180,6 @@ header.scrolled {
     
     .site-footer p {
         margin: 0;
-        font-weight: 600;
     }
 }
 
