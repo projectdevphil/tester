@@ -496,7 +496,7 @@ hr {
     color: var(--theme-color) !important;
 }
 
-.shaka-text-container span, {
+.shaka-text-container span {
     font-family: 'Onest', sans-serif !important;
     font-weight: 600 !important;
 }
