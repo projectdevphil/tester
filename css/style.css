@@ -122,34 +122,43 @@ header.scrolled {
         justify-content: center;
         min-height: calc(100vh - 60px);
         box-sizing: border-box;
+        width: 100%; 
     }
     
     .container {
         max-width: 1200px;
+        width: 100%;
         margin: 20px;
         padding: 0 20px;
     }
     
     .grid-container {
-        grid-template-columns: 1fr 400px; 
+        display: grid;
+        grid-template-columns: 1fr 400px;
+        gap: 20px;
         align-items: start;
+        width: 100%;
     }
 
     .video-aspect-box {
-        aspect-ratio: 16 / 9;
+        width: 100%;
+        padding-top: 56.25%;
+        position: relative;
+        height: 0;
+        background-color: #000;
         overflow: hidden;
-        height: auto; 
     }
 
     #video-container, 
     .shaka-video-container,
     #video {
-        width: 100% !important;
-        height: 100% !important;
         position: absolute !important;
         top: 0;
         left: 0;
+        width: 100% !important;
+        height: 100% !important;
         border: none;
+        margin: 0;
     }
 
     video {
@@ -158,7 +167,6 @@ header.scrolled {
         object-fit: contain;
     }
 }
-
 .player-wrapper {
     background-color: var(--card-background);
     border-radius: var(--border-radius);
