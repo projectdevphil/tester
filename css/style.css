@@ -498,7 +498,7 @@ hr {
 
 .shaka-text-container span {
     font-family: 'Onest', sans-serif !important;
-    font-weight: 700 !important;
+    font-weight: 600 !important;
     background-color: rgba(0, 0, 0, 0.5) !important; 
     padding: 2px 5px !important; 
 }
