@@ -479,7 +479,8 @@ hr {
 
 .shaka-controls-container button,
 .shaka-controls-container span,
-.shaka-text-container {
+.shaka-text-container,
+.shaka-text-container span, {
     font-family: 'Onest', sans-serif !important;
 }
 
