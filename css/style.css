@@ -496,13 +496,6 @@ hr {
     color: var(--theme-color) !important;
 }
 
-.shaka-text-container span {
-    font-family: 'Onest', sans-serif !important;
-    font-weight: 600 !important;
-    background-color: rgba(0, 0, 0, 0.5) !important; 
-    padding: 2px 5px !important; 
-}
-
 video::cue {
     font-family: 'Onest', sans-serif !important;
     background-color: rgba(0, 0, 0, 0.5) !important;
