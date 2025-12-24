@@ -495,3 +495,16 @@ hr {
 .shaka-range-element {
     color: var(--theme-color) !important;
 }
+
+.shaka-text-container span {
+    font-family: 'Onest', sans-serif !important;
+    font-weight: 700 !important; 
+}
+
+video::cue {
+    font-family: 'Onest', sans-serif !important;
+}
+
+.shaka-text-region {
+    font-family: 'Onest', sans-serif !important;
+}
