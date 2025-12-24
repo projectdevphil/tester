@@ -137,7 +137,7 @@ header.scrolled {
         display: grid;
         grid-template-columns: 1fr 400px;
         gap: 20px;
-        align-items: center;
+        align-items: flex-start;
         width: 100%;
     }
 
