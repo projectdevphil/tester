@@ -118,27 +118,49 @@ header.scrolled {
 @media (min-width: 992px) {
     main {
         display: flex;
-        align-items: center;
         justify-content: center;
-        min-height: calc(100vh - 110px); 
+        align-items: start;
+        min-height: calc(100vh - 60px);
         box-sizing: border-box;
         width: 100%;
-        padding-bottom: 50px;
+        padding-top: 20px;
+        padding-bottom: 60px;
     }
-    
+
     .container {
         max-width: 1600px;
         width: 100%;
         margin: 0 20px;
-        padding: 0 20px;
+        position: relative;
     }
-    
+
     .grid-container {
         display: grid;
         grid-template-columns: 1fr 400px;
         gap: 20px;
-        align-items: center;
+        align-items: start;
         width: 100%;
+    }
+
+    .control-card {
+        position: sticky;
+        top: 80px;
+        z-index: 10;
+        max-height: calc(100vh - 150px);
+        overflow-y: auto;
+    }
+
+    .site-footer {
+        position: fixed;
+        bottom: 0;
+        width: 400px; 
+        z-index: 100;
+        background: var(--glass-bg);
+        backdrop-filter: blur(10px);
+        padding: 10px 0;
+        text-align: center;
+        border-radius: var(--border-radius) var(--border-radius) 0 0;
+        right: 40px; 
     }
 
     .video-aspect-box {
@@ -147,39 +169,24 @@ header.scrolled {
         position: relative;
         height: 0;
         background-color: #000;
+        border-radius: var(--border-radius);
         overflow: hidden;
     }
 
-    #video-container, 
-    .shaka-video-container,
-    #video {
+    #video-container, .shaka-video-container, #video {
         position: absolute !important;
-        top: 0;
-        left: 0;
-        width: 100% !important;
-        height: 100% !important;
+        top: 0; left: 0;
+        width: 100% !important; height: 100% !important;
         border: none;
-        margin: 0;
-    }
-
-    video {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
-
-    .site-footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        padding: 10px 0;
-        z-index: 100;
-        margin: 0;
     }
     
-    .site-footer p {
-        margin: 0;
+    video { width: 100%; height: 100%; object-fit: contain; }
+}
+
+@media (min-width: 1240px) {
+    .site-footer {
+        right: 50%; 
+        margin-right: -580px; 
     }
 }
 
