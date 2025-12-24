@@ -116,79 +116,17 @@ header.scrolled {
 }
 
 @media (min-width: 992px) {
-    /* 1. Lock the Screen Height */
-    html, body {
-        height: 100vh;      /* Force exact screen height */
-        overflow: hidden;   /* Disable all scrolling */
-        margin: 0;
-    }
-
-    /* 2. Main Container fits remaining space exactly */
     main {
-        height: calc(100vh - 60px); /* 100vh minus Header height */
         display: flex;
-        align-items: center;        /* Center grid vertically */
+        align-items: flex-start;
         justify-content: center;
-        padding-bottom: 0;          /* Remove extra padding */
-    }
-
-    .container {
-        height: 100%;
-        max-height: 95vh; /* Safety buffer */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    /* 3. Grid stretches to fill the height */
-    .grid-container {
-        grid-template-columns: 1fr 400px;
-        grid-template-rows: 1fr; /* One row that takes all space */
-        height: 100%;            /* Fill the container */
-        max-height: calc(100vh - 100px); /* Leave small gap for aesthetics */
-        align-items: stretch;    /* Stretch both cards to be equal height */
-    }
-
-    /* 4. Player Card: Flex column to manage Video vs Text */
-    .player-wrapper {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-
-    /* 5. VITAL: Turn off fixed aspect ratio so it fits the screen */
-    .video-aspect-box {
-        aspect-ratio: unset; /* Remove the forced 16/9 pushing content down */
-        flex-grow: 1;        /* Fill all available vertical space */
-        height: 0;           /* Allow flex to calculate height */
-        min-height: 200px;   /* Minimum size safety */
-        width: 100%;
-        position: relative;
-    }
-
-    /* Ensure the actual video fits inside the flexible box */
-    #video-container, #video {
-        width: 100%;
-        height: 100%;
-        object-fit: contain; /* Adds black bars if needed, keeping 16:9 ratio intact */
-    }
-
-    .channel-details-footer {
-        flex-shrink: 0; /* Ensure footer text is always visible */
-    }
-
-    /* 6. Right Control Card */
-    .control-card {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center; /* Center inputs vertically */
-        overflow-y: auto;        /* Allow scrolling ONLY inside settings if screen is tiny */
+        min-height: calc(100vh - 60px);
         box-sizing: border-box;
     }
-
-    .site-footer {
-        display: none;
+    
+    .grid-container {
+        grid-template-columns: 1fr 400px; 
+        align-items: start;
     }
 }
 
