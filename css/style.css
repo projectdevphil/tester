@@ -118,17 +118,18 @@ header.scrolled {
 @media (min-width: 992px) {
     main {
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         justify-content: center;
-        min-height: calc(100vh - 60px);
+        min-height: calc(100vh - 110px); 
         box-sizing: border-box;
-        width: 100%; 
+        width: 100%;
+        padding-bottom: 50px;
     }
     
     .container {
         max-width: 1200px;
         width: 100%;
-        margin: 20px;
+        margin: 0 20px;
         padding: 0 20px;
     }
     
@@ -136,7 +137,7 @@ header.scrolled {
         display: grid;
         grid-template-columns: 1fr 400px;
         gap: 20px;
-        align-items: start;
+        align-items: center;
         width: 100%;
     }
 
@@ -147,6 +148,7 @@ header.scrolled {
         height: 0;
         background-color: #000;
         overflow: hidden;
+        border-radius: var(--border-radius);
     }
 
     #video-container, 
@@ -166,7 +168,26 @@ header.scrolled {
         height: 100%;
         object-fit: contain;
     }
+
+    .site-footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: var(--glass-bg);
+        backdrop-filter: blur(10px);
+        border-top: var(--glass-border);
+        padding: 10px 0;
+        z-index: 100;
+        margin: 0;
+    }
+    
+    .site-footer p {
+        margin: 0;
+        font-weight: 600;
+    }
 }
+
 .player-wrapper {
     background-color: var(--card-background);
     border-radius: var(--border-radius);
