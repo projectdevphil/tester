@@ -245,7 +245,7 @@ a, img, button,
     position: absolute; bottom: 40px; color: #666; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 992px) {
     main {
         display: flex;
         align-items: flex-start;
