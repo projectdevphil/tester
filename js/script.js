@@ -113,7 +113,7 @@ function renderMenu() {
         floatingMenu.innerHTML = `
         <ul>
             <li><a href="https://liveplay.vercel.app/home" target="_blank"><span class="material-symbols-rounded">smart_display</span> Liveplay</a></li>
-            <li><a href="about"><span class="material-symbols-rounded">info</span> About Us</a></li>
+            <li><a href="about-us"><span class="material-symbols-rounded">info</span> About Us</a></li>
             <li><a href="how-to-use"><span class="material-symbols-rounded">help_center</span> How to Use</a></li>
             <li><a href="feedback"><span class="material-symbols-rounded">feedback</span> Feedback</a></li>
         </ul>`;
